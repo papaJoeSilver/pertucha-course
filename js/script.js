@@ -1,5 +1,5 @@
 'use strict';
-
+// hoy hoy hoy
 const arr = [2, 13, 26, 8, 10];
 // arr.sort();
 arr.sort(compareNum);
