@@ -295,7 +295,7 @@ console.log(logg.substr(6, 3));
 
 const num = 12.5;
 console.log(Math.round(num));
-
+6
 const test =  '12.2pppx';
 console.log(parseInt(test));
 console.log(typeof parseInt(test));
