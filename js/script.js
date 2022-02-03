@@ -97,7 +97,7 @@ log(...num); */
 const newArray = [...array];
  */
 
-const q = {
+/* const q = {
     one: 1,
     two: 2
 };
@@ -107,4 +107,37 @@ const newObj = {...q};
 newObj.one = 'fuck you'
 newObj.two = 'pig'
 console.log(newObj);
-console.log(q);
+console.log(q); */
+
+/* const soldier = {
+    health: 400,
+    armor: 120,
+    johnSad: function() {
+        console.log('Suck my cock');
+    }
+};
+
+const john = {
+    health: 100
+};
+
+john.__proto__ = soldier; // старый метод для мамонтов 
+Object.setPrototypeOf(john, soldier);
+
+console.log(john);
+console.log(soldier);
+console.log(john.armor);
+john.johnSad(); */
+
+
+const soldier = {
+    health: 400,
+    armor: 120,
+    johnSad: function() {
+        console.log('Suck my cock');
+    }
+};
+
+const john = Object.create(soldier);
+
+john.johnSad();

@@ -1,3 +1,3 @@
 # pertucha-course
 
-salup
+salupka
