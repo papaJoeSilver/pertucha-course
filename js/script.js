@@ -1,143 +1,69 @@
 'use strict';
-/*
-let a = 5;
-    b = a;
 
-b = b + 5;
+//const numberOfFilms = +prompt('Skolko filmov ti uje posmotrel, parenek?', '')
 
-console.log(b);
-console.log(a);
-*/
+/* let numberOfFilms;
 
-/*
-const obj = {
-    a: 5,
-    b: 1
+function 
+start(); */
+
+
+const personalMovieDB = {
+    count: 0,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+    start: () => { //function() { - это по-старинке
+        personalMovieDB.count = +prompt('Skolko filmov ti uje posmotrel, parenek?', '');
+    
+        while (personalMovieDB == '' || personalMovieDB == null || isNaN(personalMovieDB)) {
+            personalMovieDB = +prompt('Skolko filmov ti uje posmotrel, parenek?', '');
+        }
+    }
 };
 
-const copy = obj;
-
-copy.a = 10;
-
-console.log(copy);
-console.log(obj);
-*/
-
-/* function copy(mainObj) {
-    let objCopy = {};
-
-    let key;
-    for (key in mainObj) {
-        objCopy[key] = mainObj[key];
-    }
-
-    return objCopy;
-}
-
-const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
+function showMyDB (privat) {
+    if (!privat) {
+        console.log(personalMovieDB);
     }
 }
+showMyDB(personalMovieDB.privat);
 
-const newNumbers = copy(numbers);
-
-newNumbers.a = 10; */
-// newNumbers.c.x = 10; // x и y в свойстве c являются ссылкой к основному объекту
-
-/*
-console.log(newNumbers);
-console.log(numbers);
-*/
-
-
-/* const add = {
-    d: 17,
-    e: 20
-};
-
-console.log(Object.assign(numbers, add));
-
-
-const clone = Object.assign({}, add);
-
-clone.d = 666;
-console.log(add);
-console.log(clone); */
-
-
-/* const oldArray = ['a', 'b', 'c',];
-const newArray = oldArray.slice();
-
-newArray[1] = 'zalupa';
-console.log(newArray);
-console.log(oldArray); */
-
-/* const video = ['youtube', 'vimeo', 'rutube'],
-      blogs = ['wordpress', 'livejournal', 'blogger'],
-      internet = [...video, ...blogs, 'vk', 'facebook'];
-
-      console.log(internet); */
-
-
-/* function log(a, b, c, d) {
-    console.log(a, b);
-    console.log(b);
-    console.log(c);
-    console.log(d, c, b, a);
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Один из последних просмотренных фильмов?', ''),
+              b = prompt('На сколько оцените его?', '');
+    
+        if (a != null && b != null && a != '' && b !='' && a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log('Done');
+        } else {
+            console.log('Lemur-mur-mur');
+            i--;
+        } 
+    }
 }
+// rememberMyFilms();
 
-const num = [2, 5, 7, 88, 9, 34];
-log(...num); */
-
-/* const array = ['a', 'b'];
-const newArray = [...array];
- */
-
-/* const q = {
-    one: 1,
-    two: 2
-};
-
-const newObj = {...q};
-
-newObj.one = 'fuck you'
-newObj.two = 'pig'
-console.log(newObj);
-console.log(q); */
-
-/* const soldier = {
-    health: 400,
-    armor: 120,
-    johnSad: function() {
-        console.log('Suck my cock');
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        console.log('Просмотрено довольно мало фильмов');
+    } else if (personalMovieDB.count > 10 && personalMovieDB < 30) {
+        console.log('Вы классический зритель');
+    } else if (personalMovieDB.count > 30) {
+        console.log('Вы киноман');
+    } else {
+        console.log('Error, suka');
     }
-};
+}
+// detectPersonalLevel();
 
-const john = {
-    health: 100
-};
-
-john.__proto__ = soldier; // старый метод для мамонтов 
-Object.setPrototypeOf(john, soldier);
-
-console.log(john);
-console.log(soldier);
-console.log(john.armor);
-john.johnSad(); */
-
-
-const soldier = {
-    health: 400,
-    armor: 120,
-    johnSad: function() {
-        console.log('Suck my cock');
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        // const genre = prompt(`Ваш любимый жанр по номером ${i}`);
+        // personalMovieDB.genres[i-1] = genre;
+        personalMovieDB.genres[i-1] = prompt(`Ваш любимый жанр по номером ${i}`);
     }
-};
-
-const john = Object.create(soldier);
-
-john.johnSad();
+}
+writeYourGenres();
