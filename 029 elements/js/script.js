@@ -1,29 +1,55 @@
 'use strict';
 
-// const box = document.getElementById('box');
+const box = document.getElementById('box'),
+      btns = document.getElementsByTagName('button'),
+      circles = document.getElementsByClassName('circle'),
+      hearts = document.querySelectorAll('.heart'),
+      oneheart = document.querySelector('.heart'),
+      wrapper = document.querySelector('.wrapper');
+      
 
-// /* console.log(box); */
+/* box.style.backgroundColor = 'blue'
+box.style.width = '500px'
+ */
+box.style.cssText = 'background-color: blue; width: 500px'
+/* let num = 300
+box.style.cssText = `background-color: blue; width: ${num}px` */
 
-// const btns = document.getElementsByTagName('button')
-// /* const btns = document.getElementsByTagName('button')[1] */
+btns[1].style.borderRadius = '40%'
+circles[0].style.backgroundColor = 'red'
 
-// console.log(btns[1]);
-
-/* const arr = [1, 14, 4, 30, 54],
-    sorted = arr.sort(compareNum);
-
-function compareNum(a, b) {
-    return a - b;
+for (let i = 0; i < hearts.length; i++) {
+    hearts[i].style.backgroundColor = 'purple'
 }
 
-console.log(sorted); */
+hearts[2].style.backgroundColor = 'green'
 
-var arr = [5, 88, 12, 19, 22];
-//Функция "sort();" не делает того, чего ожидается. Нашел вот такое решение:
+hearts.forEach(item => {
+    item.style.backgroundColor = 'yellow'
+})
 
-function compareNum(a, b) {
-  return a - b;
-}
+const div = document.createElement('div')
+// const text = document.createTextNode('Тут был Вася')
 
-arr.sort(compareNum);
-console.log(arr.sort);
+div.classList.add('black')
+
+document.body.append(div) /* {
+    width: 300px
+} */
+// div.width = '500px'
+// wrapper.append(div)
+// wrapper.appendChild(div) // старый щит
+// wrapper.prepend(div)
+
+// hearts[1].before(div)
+// hearts[1].after(div)
+
+// wrapper.insertBefore(div, hearts[2]) // старый щит
+
+// circles[2].remove()
+// wrapper.removeChild(hearts[1]) // старый щит
+
+// hearts[2].replaceWith(circles[0])
+// wrapper.replaceChild(circles[0], hearts[1]) // старый щит
+
+div.innerHTML = '<h1>Хойль ПапаДжойль! Завтра шею качаем? </h1>'

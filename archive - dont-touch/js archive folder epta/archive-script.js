@@ -679,3 +679,30 @@ alert(+'infinity') */
 
 /* console.log('Ёжик' > 'ябпоко'); */
 /* console.log(0 || '' || 2 || undefined || true || false); */
+
+/* const box = document.getElementById('box');
+
+console.log(box); */
+
+/* const btns = document.getElementsByTagName('button') */
+/* const btns = document.getElementsByTagName('button')[4] */
+
+/* console.log(btns[4]); */
+/* console.log(btns); */
+
+/* const circles = document.getElementsByClassName('circle')
+console.log(circles); */
+
+/* const hearts = document.querySelectorAll('.heart') */
+/* console.log(hearts); */
+
+/* hearts.forEach(item => {
+    console.log(item);
+}) 
+
+const oneHeart = document.querySelectorAll('.heart')
+console.log(oneHeart);
+
+const twoHeart = document.querySelector('div')
+console.log(twoHeart); */
+
