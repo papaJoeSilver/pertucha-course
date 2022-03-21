@@ -11,3 +11,4 @@ console.log(btns[1].classList.add('red', 'HOY'));
 if (btns[1].classList.contains('red')) {
     console.log('red');
 }
+xzdfas
